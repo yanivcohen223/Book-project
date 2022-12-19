@@ -1,0 +1,28 @@
+{
+  "name": "book-shop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "debug": "nodemon index.js",
+    "start": "node index.js",
+    "books": "node books_dal.js",
+    "orders": "node orders_dal.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yanivcohen223/FullStack-Homework.git"
+  },
+  "author": "Yaniv Cohen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yanivcohen223/FullStack-Homework/issues"
+  },
+  "homepage": "https://github.com/yanivcohen223/FullStack-Homework#readme",
+  "dependencies": {
+    "bootstrap": "^5.2.3",
+    "creditcard-generator": "^0.0.7",
+    "sqlite3": "^5.1.2"
+  }
+}

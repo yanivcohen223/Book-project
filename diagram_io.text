@@ -1,0 +1,24 @@
+Table books {
+  id bigint [pk, increment] // auto-increment
+  title varchar [not null,unique]
+  author varchar [not null]
+  publish_year integer [not null]
+  price float [not null]
+  left_in_stock integer [not null]
+  book_image_src  varchar [not null]
+  
+}
+
+
+Table Orders {
+  id int [pk, increment] // auto-increment
+  book_id bigint [foregin key] 
+  how_many integer [not null]
+  time_of_order datetime [not null]
+  costumer_fname varchar [not null]
+  costumer_lname varchar [not null]
+  credit_card varchar [not null]
+}
+
+
+Ref: "books"."id" < "Orders"."book_id"
