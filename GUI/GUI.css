@@ -1,33 +1,40 @@
 * {
-    margin-top: 5px;
-    margin-left: 5px;
+    margin: 0;
+    margin: 0px;
+    box-sizing: border-box;
 }
-h2 {
+
+body {
+
+    background: #f2f2f2;
+}
+.page_header {
+    padding-top: 5px;
+}
+h1 {
     text-align: center;
-}
-img {
-    height: 150px;
+    padding-left: 225px;
 }
 #user_pic {
+    padding-left: 5px;
     height: 75px;
     border-radius: 150px;
 }
-
 #logo {
-    height: 80px;
+    height: 50px;
+    margin-top: 5px;
+    padding-left: 5px;
+    border-radius: 25%;
 }
-
 .page_header {
     display: flex;
     align-items: stretch;
 }
-
  .page_logo {
     justify-content: center;
     align-items: center;
     margin: 0 auto;
 }
-
 .search-box {
     position: relative;
     background-color: red;
@@ -52,6 +59,9 @@ input::placeholder  {
     font-size: 15px;
     font-weight: 600px;
 }
+.search-sec {
+    padding-right: 5px;
+}
 i {
     position: absolute;
     right: 0;
@@ -70,6 +80,92 @@ i:hover {
     font-size: 30px;
 }
 
-.modal {
-    width: 600px;
+.content {
+    margin-top: none;
+    display: grid;
+    grid-template-columns: repeat(4,8rem);
+    grid-template-rows: repeat(3, 8rem);
+    grid-row-gap: 260px;
+    grid-column-gap: 340px;
+    height: 100%;  
+}
+ .card .book_pic {
+    height: 140px;
+    width: 140px;
+    border-radius: 25%; 
+    padding: 3px;
+    background: cadetblue;
+}
+ .card .book_pic img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 25%;
+    border: 3px solid #fff;
+}
+
+.card {
+    position: relative;
+    width: 450px;
+    height: 380px;
+    background: #fff;
+    border-radius: 20px;
+    margin: 20px 0;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    height: 35%;
+    width: 100%;
+    background-color: cadetblue;
+    border-radius: 20px 20px 0 0;
+}
+
+.card .card-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    position: relative;
+    z-index: 100;
+}
+.card .book-name {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    color: #333;
+}
+
+ .book_name { 
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.book-name .author {
+    text-align: center;
+    font-size: 15px;
+    font-weight: 500;
+}
+.card .button{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.card .button button {
+    padding: 8px 22px;
+    border-radius: 20px;
+    font-size: 15px;
+    outline: none;
+    border: none;
+    
+}
+
+.input_m {
+    margin: 5px;
 }
