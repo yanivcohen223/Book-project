@@ -78,7 +78,7 @@ function get_books(book_api) {
               <br />
               <br />
               <div class="credit_info">
-                <input class="input_m" type="text" id="card_num"
+                <input class="input_m form-control" type="text" id="card_num" pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}" maxlength="20"
                   placeholder="credit card"/>
                 <input class="input_m" type="text" id="cvv"
                   placeholder="cvv"/>

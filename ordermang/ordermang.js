@@ -31,45 +31,6 @@ let orders = [
     }
 ]
 
-// sweet alert for deleting an order
-function deleteorder(x) {
-    const swalWithBootstrapButtons = Swal.mixin({
-        customClass: {
-          confirmButton: "btn btn-success",
-          cancelButton: "btn btn-danger",
-        },
-        buttonsStyling: false,
-      });
-    
-      swalWithBootstrapButtons
-        .fire({ 
-          title: "Are you sure?",
-          text: `you are going to delete order number ${x}`,
-          icon: "warning",
-          showCancelButton: true,
-          confirmButtonText: "Yes, delete it!",
-          cancelButtonText: "No, cancel!",
-          reverseButtons: true,
-        })
-        .then((result) => {
-            //in case of deleting an order
-          if (result.isConfirmed) {
-            swalWithBootstrapButtons.fire(
-              "Deleted!",
-              "Your order has been deleted.",
-              "success"
-            );
-          }
-          //in case of mistake or regreting
-          else if (result.dismiss === Swal.DismissReason.cancel) {
-            swalWithBootstrapButtons.fire(
-              "Cancelled",
-              "Your order is safe :)",
-              "error"
-            );
-          }
-        });
-}
 
 
 function show_orders(){
@@ -88,39 +49,82 @@ function show_orders(){
                     <td>${orders[i].book_code}</td>
                     <td>${orders[i].Address}</td>
                 </tr>
-
                 <!-- The Modal -->
                 <div class="modal" id="myModal">
                     <div class="modal-dialog">
-                        <div class="modal-content">
-                    
-                            <!-- Modal Header -->
-                            <div class="modal-header">
-                              <h4 class="modal-title">Edit Order</h4>
-                              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                            </div>
-                      
-                            <!-- Modal body -->
-                            <div class="modal-body">
-
-                                <label for="edit_name">New Name:</label>
-                                <input id="edit_name" type="text" placeholder="${orders[i].name}">
-                                <br/> <br/>
-                                <label for="edit_address">New Address:</label>
-                                <input id="edit_address" type="text" placeholder="${orders[i].Address}">
-
-                            </div>
-                      
-                            <!-- Modal footer -->
-                            <div class="modal-footer">
-                              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                            </div>
-                    
+                      <div class="modal-content">
+                  
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                          <h4 class="modal-title">Modal Heading</h4>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                         </div>
+                  
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <label for="edit_name">New Name:</label>
+                            <input id="edit_name" type="text" placeholder="change name">
+                            <br/> <br/>
+                            <label for="edit_address">New Address:</label>
+                            <input id="edit_address" type="text" placeholder="change address">
+                        </div>
+                  
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                        </div>
+                  
+                      </div>
                     </div>
-                </div>`);
+                  </div>
+
+`);
         
     }
 }
 
+
 show_orders()
+/*
+
+*/ 
+
+// sweet alert for deleting an order
+function deleteorder(x) {
+  const swalWithBootstrapButtons = Swal.mixin({
+      customClass: {
+        confirmButton: "btn btn-success",
+        cancelButton: "btn btn-danger",
+      },
+      buttonsStyling: false,
+    });
+  
+    swalWithBootstrapButtons
+      .fire({ 
+        title: "Are you sure?",
+        text: `you are going to delete order number ${x}`,
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Yes, delete it!",
+        cancelButtonText: "No, cancel!",
+        reverseButtons: true,
+      })
+      .then((result) => {
+          //in case of deleting an order
+        if (result.isConfirmed) {
+          swalWithBootstrapButtons.fire(
+            "Deleted!",
+            "Your order has been deleted.",
+            "success"
+          );
+        }
+        //in case of mistake or regreting
+        else if (result.dismiss === Swal.DismissReason.cancel) {
+          swalWithBootstrapButtons.fire(
+            "Cancelled",
+            "Your order is safe :)",
+            "error"
+          );
+        }
+      });
+}

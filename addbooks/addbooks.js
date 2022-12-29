@@ -2,7 +2,8 @@ let book_sub = document.getElementById("search");
 const current_tr = document.getElementsByTagName("tr");
 //geting the books from the api
 $("#search_btn").on("click", async () => {
-  //clear_table()
+  debugger
+  clear_table()
   const book_num = 10;
   const response = await fetch(
     `https://www.googleapis.com/books/v1/volumes?q=${book_sub.value}&maxResults=${book_num}&printType=books&orderBy=newest`
@@ -62,8 +63,8 @@ function addbooks() {
 }
 
 //tried to delete the last search by adding a function with for loop gonna talk about it with itay
-/*function clear_table() { 
-  for (let i = 0; i < current_tr.length; i++) {
-    document.getElementById(`tr_${i}`).remove();
+function clear_table() { 
+  document.querySelectorAll('.book_tr').forEach((e) => {
+    e.remove();
+  })
   } 
-}*/
