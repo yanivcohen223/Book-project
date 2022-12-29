@@ -83,7 +83,7 @@ function get_books(book_api) {
                 <input class="input_m" type="text" id="cvv"
                   placeholder="cvv"/>
                 <input class="input_m" type="text" id="exp_date"
-                  placeholder="cvv"/>
+                  placeholder="exp date"/>
               </div>
             </form>
           </div>
@@ -135,49 +135,5 @@ async function main() {
   
 }
 main();
-/* 
-  function get_book(x) {
-    const book_num = 5;
-    let book_genre = "javascript";
-    let price = Math.floor(Math.random() * 250) + 50;
-    fetch(
-      `https://www.googleapis.com/books/v1/volumes?q=${book_genre}&maxResults=${book_num}&printType=books&orderBy=newest`
-    )
-      .then((result) => result.json())
-      .then((result) => {
-        console.log(result);
-            $(`#book_name${x}`).html(result.items[x - 1].volumeInfo.title);
-            $(`#Book_pic${x}`).append(
-              `<img src="${
-                result.items[x - 1].volumeInfo.imageLinks.smallThumbnail
-              }">`
-            );
-            $(`#author${x}`).html(
-              result.items[x - 1].volumeInfo.authors
-            );
-            $(`#description${x}`).html(
-              result.items[x - 1].volumeInfo.description
-            );
-            $(`#book_price${x}`).html(`price: ${price}`);
-            
-      });
-}
 
-async function display_books() {
-  try {
-    const book1 = await get_book(1);
-    console.log( "finished1");
-    const book2 = await get_book(2);
-    console.log( "finished2");
-    const book3 = await get_book(3);
-    console.log( "finished3");
-    const book4 = await get_book(4);
-    console.log( "finished4");
-    let book5 = await get_book(5);
-    console.log( "finished5");
-  } catch (err) {
-    console.log(err);
-  }
-}
-display_books();
-*/
+

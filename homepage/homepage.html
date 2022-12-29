@@ -21,18 +21,53 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
     <!-- css link -->
-    <link rel="stylesheet" href="GUI.css">
+    <link rel="stylesheet" href="homepage.css">
 
     <!-- javascript link-->
-    <script src="GUI.js"></script>
+    <script src="homepage.js"></script>
   </head>
   <body>
 
     <div class="page_header">
-      <img src="/images/download (1).jpeg" id="user_pic" alt=""/>
-
+      <button id="user_btn" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#signin">
+        <img src="/images/download (1).jpeg" id="user_pic" alt=""/>
+      </button>
+    
+    <!-- The Modal -->
+    <div class="modal" id="signin">
+      <div class="modal-dialog">
+        <div class="modal-content">
+    
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title">Sign In:</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+    
+          <!-- Modal body -->
+          <div class="modal-body">
+            <form class="form">
+              <div class="personal_info">
+                <input class="input_m" type="text" id="fname"
+                  placeholder="Username:"/>
+                <input class="input_m" type="password" id="lname"
+                  placeholder="Password"/>
+              </div>
+            </form>
+          </div>
+    
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-success" data-bs-dismiss="modal">sign in</button>
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+          </div>
+    
+        </div>
+      </div>
+    </div>
       <h1 class="page_logo">The Book Shop<img
-          src="/images/icons8-knowledge-sharing-80.png" id="logo" alt=""></<h1></h1>
+          src="/images/icons8-knowledge-sharing-80.png" id="logo" alt=""></h1>
+          
       <section class="search-sec">
         <div class="search-box">
           <input class="search_in" type="text" placeholder="search...">
@@ -117,5 +152,6 @@
       </div>
     </div>
 
+    
     </body>
   </html>

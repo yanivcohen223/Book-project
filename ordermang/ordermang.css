@@ -1,0 +1,19 @@
+body {
+    background-color: aliceblue;
+}
+#page_header {
+    font-size: 45px;
+    text-decoration: underline;
+    text-align: center;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+#wel {
+    font-size: 30px;
+    margin-left: 0.2rem;
+}
+
+table {
+    border: 5px solid;
+    margin-left: 0.2rem;
+}

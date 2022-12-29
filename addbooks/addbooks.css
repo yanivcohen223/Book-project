@@ -1,0 +1,93 @@
+
+body {
+    background-color: #daf2fa;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+
+}
+h3 {
+    text-align: center;
+    font-size: 5rem;
+    text-decoration: underline lightyellow;
+    color: #3f484a;
+    
+}
+
+.search-box {
+    position: relative;
+    background-color: red;
+    height: 40px;
+    width: 300px;
+    overflow: hidden;
+    border: none;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+.search_in {
+    width: 100%;
+    height: 100%;
+    padding: 5px 20px;
+    outline: none;
+    border: none;
+    background-color: #ffffff;
+    
+
+}
+input::placeholder  {
+    font-size: 15px;
+    font-weight: 600px;
+}
+.search-sec {
+    padding-right: 5px;
+    margin-bottom: 5px;
+    float: right;
+    
+}
+i {
+    position: absolute;
+    right: 0;
+    font-size: 20px;
+    color: #001a23;
+    background-color: #d7b377;
+    height: 50px;
+    width: 40px;
+    text-align: center;
+    padding: 10px 0;
+    transition: .5s;
+    cursor: pointer;
+    margin: 0;
+}
+i:hover {
+    font-size: 30px;
+}
+
+p {
+float: left;
+font-size: 2rem;
+    
+}
+
+.highlight {
+    background-color: lightgreen;
+}
+
+table {
+    background-color: white;
+    border-color: #001a23;
+
+}
+button{
+    float: right;
+}
+
+button:hover{
+    background-color: lightgreen;
+}
+
+.checkbox:hover {
+    cursor: pointer;
+}
+
+.book_tr:hover {
+    background-color: rgb(211, 211, 213);
+}
