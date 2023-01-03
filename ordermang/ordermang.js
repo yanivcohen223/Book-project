@@ -1,56 +1,49 @@
 let orders = [
-    {
-        order_num: 1,
-        name: "Leonard Cohen",
-        book_code: "36",
-        Address: "Jerusalem",
-    },
-    {
-        order_num: 2,
-        name: "Michael Jackson",
-        book_code: "29",
-        Address: "Haifa",
-    },
-    {
-        order_num: 3,
-        name: "Freddie Mercury",
-        book_code: "45",
-        Address: "Ramat Gan",
-    },
-    {
-        order_num: 4,
-        name: "Billy Joel",
-        book_code: "2",
-        Address: "Tel Aviv",
-    },
-    {
-        order_num: 5,
-        name: "Rubie Koltraine",
-        book_code: "106",
-        Address: "Ashkelon",
-    }
-]
+  {
+    order_num: 1,
+    name: "Leonard Cohen",
+    book_code: "36",
+    Address: "Jerusalem",
+  },
+  {
+    order_num: 2,
+    name: "Michael Jackson",
+    book_code: "29",
+    Address: "Haifa",
+  },
+  {
+    order_num: 3,
+    name: "Freddie Mercury",
+    book_code: "45",
+    Address: "Ramat Gan",
+  },
+  {
+    order_num: 4,
+    name: "Billy Joel",
+    book_code: "2",
+    Address: "Tel Aviv",
+  },
+  {
+    order_num: 5,
+    name: "Rubie Koltraine",
+    book_code: "106",
+    Address: "Ashkelon",
+  },
+];
 
-
-
-function show_orders(){
-    for (let i = 0; i < orders.length; i++) {
-        $("#orders_Table").append(`
+function show_orders() {
+  for (let i = 0; i < orders.length; i++) {
+    $("#orders_Table").append(`
         class="table table-success table-striped"
                 <tr>
                     <td>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal${i}">
                         edit
                         </button>
                         <button id="delete_order" class="btn btn-danger" onclick="deleteorder(${i})">delete</button>
-                    </td>
-                    <td>${orders[i].order_num}</td>
-                    <td>${orders[i].name}</td>
-                    <td>${orders[i].book_code}</td>
-                    <td>${orders[i].Address}</td>
-                </tr>
-                <!-- The Modal -->
-                <div class="modal" id="myModal">
+
+                <!-- The Modal for edit button --> 
+                <div class="modal" id="myModal${i}">
                     <div class="modal-dialog">
                       <div class="modal-content">
                   
@@ -77,54 +70,58 @@ function show_orders(){
                       </div>
                     </div>
                   </div>
-
+                  
+                  </td>
+                  <td>${orders[i].order_num}</td>
+                  <td>${orders[i].name}</td>
+                  <td>${orders[i].book_code}</td>
+                  <td>${orders[i].Address}</td>
+              </tr>
 `);
-        
-    }
+  }
 }
 
-
-show_orders()
+show_orders();
 /*
 
-*/ 
+*/
 
 // sweet alert for deleting an order
 function deleteorder(x) {
   const swalWithBootstrapButtons = Swal.mixin({
-      customClass: {
-        confirmButton: "btn btn-success",
-        cancelButton: "btn btn-danger",
-      },
-      buttonsStyling: false,
+    customClass: {
+      confirmButton: "btn btn-success",
+      cancelButton: "btn btn-danger",
+    },
+    buttonsStyling: false,
+  });
+
+  swalWithBootstrapButtons
+    .fire({
+      title: "Are you sure?",
+      text: `you are going to delete order number ${x}`,
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: "Yes, delete it!",
+      cancelButtonText: "No, cancel!",
+      reverseButtons: true,
+    })
+    .then((result) => {
+      //in case of deleting an order
+      if (result.isConfirmed) {
+        swalWithBootstrapButtons.fire(
+          "Deleted!",
+          "Your order has been deleted.",
+          "success"
+        );
+      }
+      //in case of mistake or regreting
+      else if (result.dismiss === Swal.DismissReason.cancel) {
+        swalWithBootstrapButtons.fire(
+          "Cancelled",
+          "Your order is safe :)",
+          "error"
+        );
+      }
     });
-  
-    swalWithBootstrapButtons
-      .fire({ 
-        title: "Are you sure?",
-        text: `you are going to delete order number ${x}`,
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonText: "Yes, delete it!",
-        cancelButtonText: "No, cancel!",
-        reverseButtons: true,
-      })
-      .then((result) => {
-          //in case of deleting an order
-        if (result.isConfirmed) {
-          swalWithBootstrapButtons.fire(
-            "Deleted!",
-            "Your order has been deleted.",
-            "success"
-          );
-        }
-        //in case of mistake or regreting
-        else if (result.dismiss === Swal.DismissReason.cancel) {
-          swalWithBootstrapButtons.fire(
-            "Cancelled",
-            "Your order is safe :)",
-            "error"
-          );
-        }
-      });
 }
