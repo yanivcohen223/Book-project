@@ -2,7 +2,6 @@ let book_sub = document.getElementById("search");
 const current_tr = document.getElementsByTagName("tr");
 //geting the books from the api
 $("#search_btn").on("click", async () => {
-  debugger
   clear_table()
   const book_num = 10;
   const response = await fetch(
@@ -20,6 +19,7 @@ function books_table(books) {
                     <td>
                         <input id="${i}" type="checkbox" class="checkbox">
                     </td>
+                    <td><img src="${books[i].volumeInfo.imageLinks.smallThumbnail}"/></td>
                     <td>${books[i].volumeInfo.title}</td>
                     <td>${books[i].volumeInfo.authors}</td>
                     <td>${books[i].volumeInfo.publishedDate}</td>
